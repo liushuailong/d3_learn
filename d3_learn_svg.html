@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./d3.v7.min.js"></script>
+</head>
+<body>
+    <!--  width: 定义图形的宽度，height：定义图形的高度  -->
+    <svg width="1200" height="800">
+        <!--    rect:绘制矩形的标签，x，y：矩形绘制的起始点（左上角），width：矩形的宽度，height：矩形的高度，fill：矩形填充的颜色    -->
+        <rect x="0" y="0" width="200" height="200" fill="yellow"></rect>
+        <!--  circle: 绘制圆形的标签，cy，cy：圆形的圆心坐标，r：圆形的半径，stroke：边框的颜色，stroke-width：边框的宽度 -->
+        <circle cx="300" cy="300" r="100" stroke="black" stroke-width="2" fill="red"></circle>
+        <!--  fill-opacity: 填充色的透明度（合法的范围是：0 - 1），stroke-opacity: 边框的透明度（合法的范围是：0 - 1）-->
+        <circle cx="400" cy="400" r="100" stroke="black" stroke-width="2" fill="red" fill-opacity="0.1" stroke-opacity="0.5"></circle>
+        <!--  rx 和 ry 属性可使矩形产生圆角。-->
+        <rect x="500" y="0" width="200" height="200" fill="yellow" rx="10" ry="10"></rect>
+        <!--  ellipse: 绘制椭圆的标签, rx 和 ry 属性定义了椭圆的宽和高, cx 和 cy 属性定义了椭圆中心的坐标-->
+        <ellipse cx="500" cy="600" rx="100" ry="50" fill="blue" ></ellipse>
+        <!--  line: 绘制直线的标签, x1 and y1 定义线的起始点, x2 and y2 定义线的结束点-->
+        <line x1="700" y1="0" x2="800" y2="100" stroke="black" stroke-width="5"></line>
+        <!--  polygon: 绘制多边形的标签, points: 依次定义了多边形每个点的坐标-->
+        <polygon points="300,10 350,190 260,210" stroke="purple" stroke-width="2" fill="lime"></polygon>
+        <!--  polygon: 绘制多线段的标签, points: 依次定义了折线的每个点的坐标, stroke: 需要设置为white(背景色)否则在线段下面会填充黑色 -->
+        <polyline points="750,40 790,40 790,80 830,80 830,120 870,120 870,160" stroke="red" stroke-width="2" fill="white"></polyline>
+        <path d="M 100 750 q 150 -300 300 0" stroke="blue" stroke-width="5" fill="none" />
+        <text x="0" y="15" fill="red">I love SVG</text>
+        <!--  对文字进行旋转  -->
+        <text x="50" y="15" fill="red" transform="rotate(30,20,40)">I love SVG</text>
+        <!-- 路径上的文字-->
+        <defs>
+            <path id="path1" d="M75,120 a1,1 0 0,0 100,0" />
+        </defs>
+        <text x="10" y="100" style="fill:red;">
+            <textPath xlink:href="#path1">I love SVG I love SVG</textPath>
+        </text>
+        <!--  -->
+    </svg>
+</body>
+</html>

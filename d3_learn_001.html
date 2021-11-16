@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="d3" class="cd3">hello world!</div>
+    <div class="append"></div>
+    <div class="html"></div>
+    <div class="style"></div>
+    <div class="select-all">select all 1</div>
+    <div class="select-all">select all 2</div>
+    <svg width="1200" height="800">
+    </svg>
+    <script>
+        // 使用d3来选择元素: 按标签
+        // 使用text方法获取标签的文本
+        console.log(d3.select("div").text())
+        // 使用d3来选择元素: 按id
+        console.log(d3.select("#d3").text())
+        // 使用d3来选择元素: 按class
+        console.log(d3.select(".cd3").text())
+        // 使用append方法添加DOM元素
+        // 使用text方法用于设置所选或新添加的元素内容
+        d3.select(".append").append("span").text("this is a append tag text.")
+        // 修改所选元素的内容和样式
+        // html方法用于设置所选或附加元素的html内容
+        d3.select(".html").html("hello world ... <span>html span</span>")
+        // attr方法用于添加或更新所选元素的属性
+        d3.select(".html").attr("style", "color: red")
+        // style方法用于设置所选元素的样式属性
+        d3.select(".style").text("style color green").style("color", "green")
+        // classed方法专门用于设置HTML元素的class
+        // add class 需要将方法的第二个参数设置为true
+        d3.select(".style").classed("myanthorclass", true)
+        // del class 需要将方法的第二个参数设置为false
+        d3.select(".myanthorclass").classed("style", false)
+        // check class 要检查是否存在类, 只需省略第二个参数并传递要查询的类名，有则返回true，否则返回false
+        console.log(d3.select(".myanthorclass").classed("style"))
+        // toggle class 将类翻转到相反的状态 - 如果它已经存在则将其删除，如果它尚不存在则添加它
+        const element = d3.select(".cd3")
+        element.classed("myanthorclass", !element.classed("myanthorclass"))
+        // selectAll 方法用于
+
+
+
+
+    </script>
+</body>
+</html>
