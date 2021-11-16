@@ -18,7 +18,12 @@
         d3.select("#list").selectAll("li").data(data_list).text((d) => {
             return d;
         })
-        // 
+        // 接下来使用enter，append方法将剩下的三个虚拟元素映射到新创建的多个元素len(data) -2上。
+        .enter()
+        .append("li")
+        .text((d) => {
+            return "new li " + d;
+        })
 
 
     </script>
