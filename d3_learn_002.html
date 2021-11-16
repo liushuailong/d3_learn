@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./d3.v7.min.js"></script>
+</head>
+<body>
+    <div>hello world!</div>
+    <ul id="list">
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        <!-- data join 的主要目的是使用给定的数据集映射现有文档的元素-->
+        // 使用data方法后会在创建len(data)个数的虚拟元素，并将前两个虚拟元素映射到所选的两个li元素上面
+        const data_list = [1, 2, 3, 4]
+        d3.select("#list").selectAll("li").data(data_list).text((d) => {
+            return d;
+        })
+        // 
+
+
+    </script>
+</body>
+</html>

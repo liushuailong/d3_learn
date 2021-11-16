@@ -42,7 +42,9 @@
         // toggle class 将类翻转到相反的状态 - 如果它已经存在则将其删除，如果它尚不存在则添加它
         const element = d3.select(".cd3")
         element.classed("myanthorclass", !element.classed("myanthorclass"))
-        // selectAll 方法用于
+        // selectAll 方法用于选择HTML文档中的多个元素
+        // 可以在selectAll 方法中链接所有附加的修改方法， append(), html(), text(), attr(), style(), classed(),等。 在这种情况下，方法将影响所有匹配元素。
+        d3.selectAll(".select-all").attr("style", "color: yellow")
 
 
 
