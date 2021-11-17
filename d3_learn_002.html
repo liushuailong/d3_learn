@@ -11,6 +11,7 @@
         <li></li>
         <li></li>
     </ul>
+    <div id="datum"></div>
     <script>
         <!-- data join 的主要目的是使用给定的数据集映射现有文档的元素-->
         // 使用data方法后会在创建len(data)个数的虚拟元素，并将前两个虚拟元素映射到所选的两个li元素上面
@@ -24,6 +25,15 @@
         .text((d) => {
             return "new li " + d;
         })
+        // 使用exit，remove方法将为被映射虚拟元素的元素进行删除
+        d3.selectAll("li").data([10, 20, 30]).text((d)=> d).exit().remove()
+        // 数据连接方法
+        // datum() data() enter() exit()
+        // datum 用于为HTML文档中单个元素设定值
+        d3.select("#datum").datum(100).text((d) => `datum ${d}`)
+        // data 方法用于将数据集分配给HTML的元素集合
+
+
 
 
     </script>
