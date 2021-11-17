@@ -6,8 +6,26 @@
     <script src="./d3.v7.min.js"></script>
 </head>
 <body>
-    <div id="svg-transformation"></div>
+    <svg id="d3" class="d3"></svg>
     <script>
+        const d = d3.select("#d3")
+            .attr("width", "500")
+            .attr("height", "500")
+        d.append("rect")
+            .attr("x", 100)
+            .attr("y", 100)
+            .attr("width", 100)
+            .attr("height", 100)
+            .attr("fill", "green")
+            .attr("transform", "translate(50, 50)")
+        d.append("rect")
+            .attr("x", 100)
+            .attr("y", 100)
+            .attr("width", 100)
+            .attr("height", 100)
+            .attr("fill", "green")
+        d.append("circle").attr("cx", "100").attr("cy", "100").attr("r", "3").attr("fill", "red")
+        d.append("circle").attr("cx", "150").attr("cy", "150").attr("r", "3").attr("fill", "red")
     </script>
 </body>
 </html>

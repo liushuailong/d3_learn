@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./d3.v7.min.js"></script>
+    <style>
+        svg rect {
+            fill: gray;
+        }
+        svg text {
+            fill: yellow;
+            font: 12px sans-serif;
+            text-anchor: end;
+        }
+    </style>
+</head>
+<body>
+    <svg id="bar"></svg>
+    <script>
+        // 条形图的绘制
+        const data = [10, 20, 30]
+        const width = 400
+        const height = 400
+        const colors = ["green", "red", "yellow"]
+
+        const svg = d3.select("#bar").attr("width", width).attr("height", height)
+        const g = svg.selectAll("g").data(data).enter().append("g").attr("transform", function (d, i){
+            return `translate(0,0)`;
+        })
+        g.append("circle").attr("cx", function (d, i) {
+            return i*75 +50;
+        }).attr("cy", function (d, i){
+            return 75;
+        }).attr("r", function (d, i){
+            return d*1.5;
+        }).attr("fill", function (d, i) {
+            return colors[i];
+        })
+        g.append("text").attr("x", (d, i) => {
+            return 75*i + 25;
+        }).attr("y", "80")
+        .attr("stroke", "teal")
+        .attr("font-size", "10px")
+        .attr("font-family", "sans-serif")
+        .text(function(d) {
+            return d;
+        })
+    </script>
+</body>
+</html>

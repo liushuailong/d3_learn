@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./d3.v7.min.js"></script>
+</head>
+<body>
+    <div id="animation">hello myself!</div>
+    <script>
+        // d3通过过渡实现动画
+        d3.select("#animation")
+            .transition()
+            .style("color", "green")
+            .duration(5000)
+            .transition()
+            .style("font-size", "3em")
+            .each("start", function() { d3.select(this).style("background-color", "yellow");}) // ??? 没有生效
+            .delay(2000)
+            .duration(2000)
+
+
+    </script>
+</body>
+</html>
