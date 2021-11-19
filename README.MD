@@ -10,6 +10,7 @@
 - d3_learn_007.html d3.js学习第六章 animation
 - d3_learn_008.html d3.js学习第六章 draw charts-bar
 - d3_learn_009.html d3.js学习第六章 draw charts-circle
+- d3_learn_011.html d3.js学习第六章 绘制图表
 
 
 ## 参考文章
